@@ -602,7 +602,7 @@ function RayfieldLibrary:Notify(NotificationSettings)
 			end
 		end
 
-		repeat wait(0.001) until ActionCompleted
+		repeat task.wait(1) until ActionCompleted
 
 		for _, Action in ipairs(Notification.Actions:GetChildren()) do
 			if Action.ClassName == "TextButton" and Action.Name ~= "Template" then
@@ -1139,7 +1139,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 		end
 	end
 	if Settings.KeySystem then
-		repeat wait() until Passthrough
+		repeat task.wait() until Passthrough
 	end
 
 	Notifications.Template.Visible = false
@@ -2457,14 +2457,14 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 end)
 
 UserInputService.InputBegan:Connect(function(input, processed)
-	if (input.KeyCode == Enum.KeyCode.Escape) then
+	if (input.KeyCode == Enum.KeyCode.K and not processed) then
 		if Debounce then return end
 		if Hidden then
 			Hidden = false
 			Unhide()
-		-- else
-		-- 	Hidden = true
-		-- 	Hide()
+		else
+			Hidden = true
+			Hide()
 		end
 	end
 end)
@@ -2497,6 +2497,6 @@ function RayfieldLibrary:LoadConfiguration()
 	end
 end
 
-task.delay(3.5, RayfieldLibrary.LoadConfiguration, RayfieldLibrary)
+task.delay(.5, RayfieldLibrary.LoadConfiguration, RayfieldLibrary)
 
 return RayfieldLibrary
