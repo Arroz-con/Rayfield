@@ -2413,6 +2413,13 @@ function RayfieldLibrary:CreateWindow(Settings)
 	return Window
 end
 
+function RayfieldLibrary:Minimise()
+	Minimise()
+end
+
+function RayfieldLibrary:Maximise()
+	Maximise()
+end
 
 function RayfieldLibrary:Destroy()
 	Rayfield:Destroy()
@@ -2490,4 +2497,4 @@ if Rayfield:FindFirstChild("Notice") then
 	end)
 end
 
-	return RayfieldLibrary
+return RayfieldLibrary
