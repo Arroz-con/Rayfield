@@ -2413,6 +2413,14 @@ function RayfieldLibrary:CreateWindow(Settings)
 	return Window
 end
 
+function RayfieldLibrary:Hide()
+	Hide()
+end
+
+function RayfieldLibrary:Unhide()
+	Unhide()
+end
+
 function RayfieldLibrary:Minimise()
 	Minimise()
 end
