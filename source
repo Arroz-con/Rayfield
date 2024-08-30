@@ -1707,6 +1707,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Dropdown.Visible = true
 			Dropdown.Parent = TabPage
 
+			Dropdown.List.ScrollBarImageTransparency = 0
+			Dropdown.List.ScrollBarThickness = 20
 			Dropdown.List.Visible = false
 
 			if typeof(DropdownSettings.CurrentOption) == "string" then
