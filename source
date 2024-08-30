@@ -1752,7 +1752,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Dropdown.Toggle.Rotation = 180
 
 			Dropdown.Interact.MouseButton1Click:Connect(function()
-				print("clicked1")
 				TweenService:Create(Dropdown, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
 				TweenService:Create(Dropdown.UIStroke, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 				wait(0.1)
@@ -1828,7 +1827,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 				DropdownOption.Interact.ZIndex = 50
 				DropdownOption.Interact.MouseButton1Click:Connect(function()
-					print("clicked2")
 					if not DropdownSettings.MultipleOptions and table.find(DropdownSettings.CurrentOption, Option) then 
 						return
 					end
