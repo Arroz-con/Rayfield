@@ -1924,7 +1924,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 				end
 				for _, v in Dropdown.List:GetChildren() do
 					if v.ClassName == "Frame" and v.Name ~= "Placeholder" then
-					v:Destroy()
+						v:Destroy()
+					end
 				end
 				for _, Option in ipairs(NewOptions) do
 					local DropdownOption = Elements.Template.Dropdown.List.Template:Clone()
