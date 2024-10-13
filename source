@@ -8,7 +8,6 @@ iRay  | Programming
 
 ]]
 
--- test
 
 local Release = "Beta 8"
 local NotificationDuration = 1
