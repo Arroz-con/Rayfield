@@ -2124,6 +2124,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 						wait(0.25)
 						if Held then
 							local Loop; Loop = RunService.Stepped:Connect(function()
+								print("looping")
 								if not Held then
 									pcall(function()
 										KeybindSettings.Callback(false) -- maybe pcall this
