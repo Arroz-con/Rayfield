@@ -2125,10 +2125,14 @@ function RayfieldLibrary:CreateWindow(Settings)
 						if Held then
 							local Loop; Loop = RunService.Stepped:Connect(function()
 								if not Held then
-									KeybindSettings.Callback(false) -- maybe pcall this
-									Loop:Disconnect()
+									pcall(function()
+										KeybindSettings.Callback(false) -- maybe pcall this
+										Loop:Disconnect()
+									end)
 								else
-									KeybindSettings.Callback(true) -- maybe pcall this
+									pcall(function()
+										KeybindSettings.Callback(true) -- maybe pcall this
+									end)
 								end
 							end)	
 						end
